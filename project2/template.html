@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Project 2 Report</title>
+    <!-- ✂ — (embedded style sheet unchanged) — ✂ -->
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
+      html{font:100%/1.5 system-ui;counter-reset:figure;background:var(--color-neutral-95);max-width:min(75vw,80em);margin:0 auto}
+      h1,h2{border-bottom:1px solid var(--color-neutral-80);padding-bottom:.2em}
+      h1{margin-block:1em .5rem;font-size:clamp(2.5em,150% + 2vh + 2vw,10vmin);font-weight:800}
+      h1 small{display:block;width:fit-content;padding:.2em .5em;margin-inline:auto;color:#fff;background:var(--color-neutral-40);font-size:40%;text-transform:uppercase;white-space:nowrap}
+      h2{font-size:180%;color:var(--color-neutral-30)}
+      h3{font-size:130%}
+      ul,ol{padding-inline-start:2em}
+      li+li{margin-top:.2em}
+      header{padding-block:1em;text-align:center}
+      main{background:#fff;color:var(--color-neutral-20);border-radius:1rem;padding:.1rem 2rem}
+      figure{margin:1em 0;padding:.5rem;margin-inline:-.5em;border:1px solid var(--color-neutral-80);box-shadow:0 .1em .2em var(--color-neutral-95);text-align:center;background:#fff}
+      figure>figcaption{font:500 75%/1.4 system-ui;background:var(--color-neutral-95);padding:.5rem;margin:-.5rem;margin-top:.5rem;counter-increment:figure;text-align:left}
+      figure>figcaption::before{content:'Figure ' counter(figure) ': ';font-weight:700;color:var(--color-neutral-40)}
+
+
+      figure img {
+        max-width: 100%;
+        height: auto;
+        max-height: 700px;
+        display: block;
+        margin-inline: auto;
+        }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>John Collins</strong> — <em>johnwcollins@ucsd.edu</em></p>
+    </header>
+
+    <main>
+      <h2>Proposition: The NYPD complaint-review process is biased against Black civilians compared with White civilians.</h2>
+
+      <!-- ░░░░░  FOR  ░░░░░ -->
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="me.png" alt="Line plot showing Black vs White substantiation rates over time with red shaded gap" />
+          <figcaption>
+            Time-series of substantiation rates (2000-2019).  Red shading highlights years where substantiation rates for Black New Yorkers fall
+            below substantiation rates for White New Yorkers.
+          </figcaption>
+        </figure>
+
+        <p><strong>Key design decisions &amp; rationale (–2&nbsp;… +2):</strong></p>
+
+        <ul>
+          <li><strong>Red fill between lines (Score –1)</strong> — visually amplifies every gap and makes it catch the eye.</li>
+          <li><strong>Loaded title “Disparity in Substantiation” (–1)</strong> — frames difference as injustice before viewer inspects values.</li>
+          <li><strong>Grid + full 0–100 % y-axis (+1.5)</strong> — keeps underlying numbers transparent, avoiding outright distortion.</li>
+        </ul>
+      </section>
+
+      <!-- ░░░░░  AGAINST  ░░░░░ -->
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="me1.png" alt="Small-multiple bar chart: large count bar, small percentage bar beneath" />
+          <figcaption>
+            Complaint volume vs&nbsp;success: the vast majority of filings come from Black civilians, yet both groups
+            see roughly three-quarters of cases substantiated.
+          </figcaption>
+        </figure>
+
+        <p><strong>Key design decisions &amp; rationale:</strong></p>
+
+
+        <ul>
+            <li><strong>Placed counts panel first (Score –1)</strong> — frames Black civilians as filing far more complaints, suggesting equal substantiation rates are "fair."</li>
+            <li><strong>Used dark black for Black complaint volume bar (Score –0.5)</strong> — adds visual weight and dominance to the disparity in complaint numbers.</li>
+            <li><strong>Made substantiation-rate bars identical in color (Score –0.5)</strong> — subtly implies rates are effectively the same even though they're slightly different.</li>
+            <li><strong>Compressed lower panel vertically (Score –1)</strong> — minimizes visual perception of the 3.4% gap, making both groups look nearly identical.</li>
+        </ul>
+
+
+
+      </section>
+
+      <!-- ░░░░░  REFLECTION  ░░░░░ -->
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>
+            Building two opposite stories from the same data felt like arguing both sides of a case.
+            For the bias side, I picked the metric substantiation rate, used red shading, and wrote a strong title.
+            These choices made a three-point gap seem more serious without touching the axis. 
+            The hardest part was realizing how little change was needed to shift perception.
+            I had a tendency to go overboard with the visualization, but less is more.
+          </p>
+          
+          <p>
+            Flipping the story back was simple: re-order the panels and zoom out. 
+            Showing complaint counts first made the workload difference obvious, and using a full 0–100 % axis on substantiation rates made the gap look small. 
+            What surprised me is how much order and layout can influence the viewer's attention without even changing the numbers.
+          </p>
+          
+          <p>
+            I define an ethical visualization as one where a careful reader can still find the real pattern and numbers.
+            Using color, order, or framing is persuasive but fair. Cutting axes, hiding groups, or flipping effects crosses the line into misleading. 
+            I think the key checks are showing the real values, labeling any filters, and making sure someone else could reproduce the chart.
+          </p>
+          
+      </section>
+    </main>
+  </body>
+</html>
